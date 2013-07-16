@@ -128,7 +128,7 @@ store_delete(VALUE self, VALUE key)
     }
 }
 
-void Init_Store()
+void Init_caja_store()
 {
     mCaja = rb_define_module("Caja");
     cStore = rb_define_class_under(mCaja, "Store", rb_cObject);
