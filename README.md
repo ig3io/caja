@@ -1,29 +1,10 @@
 # Caja
 
-TODO: Write a gem description
+NoSQL key-value file based storage.
 
-## Installation
+**Work in progress**
 
-Add this line to your application's Gemfile:
+## Copyright
 
-    gem 'caja'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install caja
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+- `Caja` code under the MIT License.
+- `UnQLite` distributed under the BSD License.
