@@ -60,9 +60,10 @@ store_store(VALUE self, VALUE key, VALUE value)
 
     int ret = unqlite_kv_store(db, key_ptr, key_len, value_ptr, value_len);
 
-    // TODO: do something with bad situations
-
-    return INT2FIX(ret);
+    if (ret < 0) {
+        return Qfalse;
+    }
+    return Qtrue;
 }
 
 static VALUE
@@ -80,9 +81,10 @@ store_append(VALUE self, VALUE key, VALUE value)
 
     int ret = unqlite_kv_append(db, key_ptr, key_len, value_ptr, value_len);
 
-    // TODO: do something with bad situations
-
-    return INT2FIX(ret);
+    if (ret < 0) {
+        return Qfalse;
+    }
+    return Qtrue;
 }
 
 static VALUE
@@ -121,11 +123,10 @@ store_delete(VALUE self, VALUE key)
     char *key_ptr = RSTRING_PTR(key);
 
     int ret = unqlite_kv_delete(db, key_ptr, key_len);
-    if (ret == UNQLITE_OK) {
-        return Qtrue; // TODO
-    } else {
+    if (ret != UNQLITE_OK) {
         return Qfalse; // TODO
     }
+    return Qtrue; // TODO
 }
 
 void Init_caja_store()
