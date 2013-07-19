@@ -13,6 +13,7 @@ describe Caja::Box do
 
   context "initialization succesful" do
     before { Pathname::File.delete(good_path) if Pathname::File.exist?(good_path) }
+    after { Pathname::File.delete(good_path) }
     it "should create a new file after successful store operation" do
       box = Caja::Box.new(good_path)
       box.store("test key", "test value")
