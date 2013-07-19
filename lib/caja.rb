@@ -1,23 +1,15 @@
 require "caja/version"
 require "caja_store"
-require 'file'
 
 module Caja
 
-  def valid_new_file?(path)
-    dirname = File.dirname(path)
-    if File.exist?(path)
-      return false
-    else
-      return File.exist?(dirname)
-    end
-  end
 
   class Box
     attr_reader :path
 
     def initialize(path)
-      unless valid_new_file(path) do
+      dirname = File.dirname(path)
+      if File.exist?(path) || !File.exist?(dirname)
         raise IOError, "invalid path"
       end
       @store = Caja::Store.new(path)
