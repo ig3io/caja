@@ -5,7 +5,7 @@ require 'pathname'
 describe Caja::Box do
   let(:bad_path) { "./not-existing/database.db"}
   let(:good_path) { "./caja.db" }
-  
+
   it "should raise an error if the data store can not be created" do
     expect { Caja::Box.new(bad_path) }.to raise_error(IOError)
     Pathname::File.exist?(bad_path).should_not be_true
@@ -20,5 +20,5 @@ describe Caja::Box do
       Pathname::File.exist?(good_path).should be_true
     end
   end
-  
+
 end
