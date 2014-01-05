@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ignacio@ignacio.cat"]
   spec.description   = %q{UnQLite powered simple key-value storage}
   spec.summary       = %q{Simple key-value storage that uses the UnQLite NoSQL serverless library}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ignc/caja"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
